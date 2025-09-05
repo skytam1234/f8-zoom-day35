@@ -1,0 +1,113 @@
+.navigation {
+    position: sticky !important;
+    top: 30px;
+    margin: 20px 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 1320px;
+    height: 70px;
+    background-color: #1e272e;
+    border-radius: 10px;
+    box-shadow: 15px 20px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home {
+    width: 60px;
+    height: 60px;
+    background-color: #ee3131;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.home .fa-house {
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #fff;
+}
+.navigation ul {
+    display: flex;
+    width: 490px;
+}
+.navigation ul .list-item {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul .list-item a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.navigation ul .list-item a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #fff;
+}
+.navigation ul li.active a .icon {
+    transform: translateY(-32px);
+}
+.navigation ul .list-item a .text {
+    position: absolute;
+    color: #fff;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+.indicator {
+    position: absolute;
+    top: -50%;
+    width: 60px;
+    height: 60px;
+    background-color: #ee3131;
+    border-radius: 50%;
+    border: 6px solid #edf4ff;
+    transition: 0.5s;
+}
+
+.navigation .list-item:nth-child(1).active ~ .indicator {
+    transform: translateX(calc(70px * 0));
+}
+.navigation .list-item:nth-child(2).active ~ .indicator {
+    transform: translateX(calc(70px * 1));
+}
+.navigation .list-item:nth-child(3).active ~ .indicator {
+    transform: translateX(calc(70px * 2));
+}
+.navigation .list-item:nth-child(4).active ~ .indicator {
+    transform: translateX(calc(70px * 3));
+}
+.navigation .list-item:nth-child(5).active ~ .indicator {
+    transform: translateX(calc(70px * 4));
+}
+.navigation .list-item:nth-child(6).active ~ .indicator {
+    transform: translateX(calc(70px * 5));
+}
+.navigation .list-item:nth-child(7).active ~ .indicator {
+    transform: translateX(calc(70px * 6));
+}
