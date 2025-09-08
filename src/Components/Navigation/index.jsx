@@ -1,6 +1,7 @@
+import React from "react";
 import { NavLink } from "react-router";
 import styles from "./Navigation.module.scss";
-import React from "react";
+import { useLocation } from "react-router";
 
 const items = [
     {
@@ -40,7 +41,12 @@ const items = [
     },
 ];
 function Navigation() {
-    const [lie, setLie] = React.useState(0);
+    const param = useLocation();
+    const [params, setParams] = React.useState(param.pathname);
+
+    React.useEffect(() => {
+        setParams(param.pathname);
+    }, [param, setParams]);
 
     return (
         <>
@@ -50,29 +56,17 @@ function Navigation() {
                 </div>
                 <ul>
                     {items.map((item, index) => {
-                        console.log(lie);
                         return (
                             <>
                                 <li
                                     className={`${styles["list-item"]} ${
-                                        index === lie ? styles["active"] : ""
+                                        params === item.path
+                                            ? styles.active
+                                            : ""
                                     }`}
-                                    data-index={index}
                                     key={index}
                                 >
-                                    <NavLink
-                                        to={item.path}
-                                        onClick={(e) => {
-                                            const element = e.target.closest(
-                                                `.${styles["list-item"]}`
-                                            );
-
-                                            const id = Number(
-                                                element.dataset.index
-                                            );
-                                            setLie(id);
-                                        }}
-                                    >
+                                    <NavLink to={item.path} key={index}>
                                         <span className={styles["icon"]}>
                                             <i className={item.icon}></i>
                                         </span>

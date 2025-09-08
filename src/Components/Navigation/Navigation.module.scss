@@ -62,7 +62,7 @@
     transition: 0.5s;
     color: #fff;
 }
-.navigation ul li.active a .icon {
+.navigation ul .list-item.active a .icon {
     transform: translateY(-32px);
 }
 .navigation ul .list-item a .text {
@@ -75,7 +75,7 @@
     opacity: 0;
     transform: translateY(20px);
 }
-.navigation ul li.active a .text {
+.navigation ul .list-item.active a .text {
     opacity: 1;
     transform: translateY(10px);
 }
@@ -91,23 +91,23 @@
 }
 
 .navigation .list-item:nth-child(1).active ~ .indicator {
-    transform: translateX(calc(70px * 0));
+    transform: translateX(calc(70px * 0 + 5px));
 }
 .navigation .list-item:nth-child(2).active ~ .indicator {
-    transform: translateX(calc(70px * 1));
+    transform: translateX(calc(70px * 1 + 5px));
 }
 .navigation .list-item:nth-child(3).active ~ .indicator {
-    transform: translateX(calc(70px * 2));
+    transform: translateX(calc(70px * 2 + 5px));
 }
 .navigation .list-item:nth-child(4).active ~ .indicator {
-    transform: translateX(calc(70px * 3));
+    transform: translateX(calc(70px * 3 + 5px));
 }
 .navigation .list-item:nth-child(5).active ~ .indicator {
-    transform: translateX(calc(70px * 4));
+    transform: translateX(calc(70px * 4 + 5px));
 }
 .navigation .list-item:nth-child(6).active ~ .indicator {
-    transform: translateX(calc(70px * 5));
+    transform: translateX(calc(70px * 5 + 5px));
 }
 .navigation .list-item:nth-child(7).active ~ .indicator {
-    transform: translateX(calc(70px * 6));
+    transform: translateX(calc(70px * 6 + 5px));
 }
