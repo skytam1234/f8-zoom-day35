@@ -1,0 +1,53 @@
+.wrapper {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    &:not(.disabled):hover {
+        color: #e47a7a;
+        background: #f1e3f1;
+    }
+}
+
+.primary {
+    color: #fff;
+    background: #a423a4;
+}
+
+.rounded {
+    border-radius: 999px;
+}
+
+.bordered {
+    color: #a423a4;
+    border-color: currentColor;
+}
+
+// Sizes
+.small {
+    padding: 2px 12px;
+    font-size: 1.4rem;
+}
+
+.medium {
+    padding: 4px 16px;
+}
+
+.large {
+    padding: 6px 20px;
+    font-size: 1.8rem;
+}
+.disabled {
+    opacity: 0.5;
+}
+.loading i {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

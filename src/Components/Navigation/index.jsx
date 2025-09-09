@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
 import styles from "./Navigation.module.scss";
 import { useLocation } from "react-router";
 
@@ -39,6 +39,11 @@ const items = [
         title: "Profile",
         icon: `fa-solid fa-user`,
     },
+    {
+        path: "/button",
+        title: "Button",
+        icon: `fa-solid fa-toggle-on`,
+    },
 ];
 function Navigation() {
     const param = useLocation();
@@ -52,30 +57,28 @@ function Navigation() {
         <>
             <div className={styles["navigation"]}>
                 <div className={styles["home"]}>
-                    <i className="fa-solid fa-house"></i>
+                    <Link to="/">
+                        <i className="fa-solid fa-house"></i>
+                    </Link>
                 </div>
                 <ul>
                     {items.map((item, index) => {
                         return (
-                            <>
-                                <li
-                                    className={`${styles["list-item"]} ${
-                                        params === item.path
-                                            ? styles.active
-                                            : ""
-                                    }`}
-                                    key={index}
-                                >
-                                    <NavLink to={item.path} key={index}>
-                                        <span className={styles["icon"]}>
-                                            <i className={item.icon}></i>
-                                        </span>
-                                        <span className={styles["text"]}>
-                                            {item.title}
-                                        </span>
-                                    </NavLink>
-                                </li>
-                            </>
+                            <li
+                                key={index}
+                                className={`${styles["list-item"]} ${
+                                    params === item.path ? styles.active : ""
+                                }`}
+                            >
+                                <NavLink to={item.path}>
+                                    <span className={styles["icon"]}>
+                                        <i className={item.icon}></i>
+                                    </span>
+                                    <span className={styles["text"]}>
+                                        {item.title}
+                                    </span>
+                                </NavLink>
+                            </li>
                         );
                     })}
 

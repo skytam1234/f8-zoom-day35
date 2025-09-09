@@ -34,7 +34,7 @@
 }
 .navigation ul {
     display: flex;
-    width: 490px;
+    width: 560px;
 }
 .navigation ul .list-item {
     position: relative;
@@ -110,4 +110,7 @@
 }
 .navigation .list-item:nth-child(7).active ~ .indicator {
     transform: translateX(calc(70px * 6 + 5px));
+}
+.navigation .list-item:nth-child(8).active ~ .indicator {
+    transform: translateX(calc(70px * 7 + 5px));
 }

@@ -5,12 +5,13 @@ import Profile from "../../Pages/ProfileComponent";
 import Todo from "../../Pages/TodoComponent";
 import Weather from "../../Pages/WeatherComponent";
 import Home from "../../Pages/HomeComponent";
+import ButtonE from "../../Pages/Button";
 import Navigation from "../Navigation";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { HashRouter, Routes, Route } from "react-router";
 function AppRouter() {
     return (
         <>
-            <Router>
+            <HashRouter>
                 <Navigation />
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
@@ -20,8 +21,9 @@ function AppRouter() {
                     <Route path="/profile" element={<Profile />}></Route>
                     <Route path="/todo" element={<Todo />}></Route>
                     <Route path="/weather" element={<Weather />}></Route>
+                    <Route path="/button" element={<ButtonE />}></Route>
                 </Routes>
-            </Router>
+            </HashRouter>
         </>
     );
 }
